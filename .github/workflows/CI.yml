@@ -1,4 +1,4 @@
-name: Build_CSCG.Abstract
+name: Build CSCG.Abstract
 
 on:
   push:
