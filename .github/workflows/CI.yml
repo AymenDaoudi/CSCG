@@ -2,9 +2,11 @@ name: Build CSCG.Abstract
 
 on:
   push:
+    paths: [ CSCG.Abstract/** ]
     branches: [ main, feature/* ]
   pull_request:
     branches: [ main, feature/* ]
+    paths: [ CSCG.Abstract/** ]
 
 jobs:
   build:
