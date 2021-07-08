@@ -1,0 +1,12 @@
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\bin\Debug\netstandard2.1\CodeGenerator.Roslyn.deps.json
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\bin\Debug\netstandard2.1\CodeGenerator.Roslyn.dll
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\bin\Debug\netstandard2.1\CodeGenerator.Roslyn.pdb
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\bin\Debug\netstandard2.1\CodeGenerator.Abstract.dll
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\bin\Debug\netstandard2.1\CodeGenerator.Abstract.pdb
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.csproj.AssemblyReference.cache
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.AssemblyInfoInputs.cache
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.AssemblyInfo.cs
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.csproj.CoreCompileInputs.cache
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.csproj.CopyComplete
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.dll
+C:\Users\aymen.daoudi\source\Personal Repos\ASL\CodeGenerator\obj\Debug\netstandard2.1\CodeGenerator.Roslyn.pdb

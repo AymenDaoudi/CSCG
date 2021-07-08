@@ -1,0 +1,9 @@
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\bin\Debug\netstandard2.1\CodeGenerator.Abstract.deps.json
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\bin\Debug\netstandard2.1\CodeGenerator.Abstract.dll
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\bin\Debug\netstandard2.1\CodeGenerator.Abstract.pdb
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\obj\Debug\netstandard2.1\CodeGenerator.Abstract.AssemblyInfoInputs.cache
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\obj\Debug\netstandard2.1\CodeGenerator.Abstract.AssemblyInfo.cs
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\obj\Debug\netstandard2.1\CodeGenerator.Abstract.csproj.CoreCompileInputs.cache
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\obj\Debug\netstandard2.1\CodeGenerator.Abstract.dll
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\obj\Debug\netstandard2.1\CodeGenerator.Abstract.pdb
+C:\Users\aymen.daoudi\source\Personal Repos\Domain\obj\Debug\netstandard2.1\CodeGenerator.Abstract.csproj.AssemblyReference.cache

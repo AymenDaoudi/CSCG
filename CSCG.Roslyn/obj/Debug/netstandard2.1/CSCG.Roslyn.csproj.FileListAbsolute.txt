@@ -1,0 +1,4 @@
+C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Roslyn\obj\Debug\netstandard2.1\CSCG.Roslyn.csproj.AssemblyReference.cache
+C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Roslyn\obj\Debug\netstandard2.1\CSCG.Roslyn.AssemblyInfoInputs.cache
+C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Roslyn\obj\Debug\netstandard2.1\CSCG.Roslyn.AssemblyInfo.cs
+C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Roslyn\obj\Debug\netstandard2.1\CSCG.Roslyn.csproj.CoreCompileInputs.cache
