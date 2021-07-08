@@ -1,9 +1,0 @@
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\bin\Debug\netstandard2.1\CSCG.Abstract.deps.json
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\bin\Debug\netstandard2.1\CSCG.Abstract.dll
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\bin\Debug\netstandard2.1\CSCG.Abstract.pdb
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\obj\Debug\netstandard2.1\CSCG.Abstract.csproj.AssemblyReference.cache
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\obj\Debug\netstandard2.1\CSCG.Abstract.AssemblyInfoInputs.cache
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\obj\Debug\netstandard2.1\CSCG.Abstract.AssemblyInfo.cs
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\obj\Debug\netstandard2.1\CSCG.Abstract.csproj.CoreCompileInputs.cache
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\obj\Debug\netstandard2.1\CSCG.Abstract.dll
-C:\Users\aymen.daoudi\source\Personal Repos\CSCG\CSCG.Abstract\obj\Debug\netstandard2.1\CSCG.Abstract.pdb
