@@ -20,6 +20,6 @@ jobs:
     - name: Get location
       run: pwd
     - name: Restore dependencies
-      run: dotnet restore CSCG.Anstract/CSCG.Anstract.csproj
+      run: dotnet restore CSCG.Abstract/CSCG.Abstract.csproj
     - name: Build
-      run: dotnet build CSCG.Anstract/CSCG.Anstract.csproj --no-restore
+      run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --no-restore
