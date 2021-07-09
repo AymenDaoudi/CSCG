@@ -1,4 +1,4 @@
-name: Build CSCG.Roslyn
+name: CSCG.Roslyn.CI
 
 on:
   push:
