@@ -1,4 +1,4 @@
-name: Build CSCG.Abstract
+name: Build CSCG.Roslyn
 
 on:
   push:
