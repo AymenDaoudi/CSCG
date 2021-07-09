@@ -17,6 +17,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore CSCG.Abstract/CSCG.Abstract.csproj
     - name: Build
-      run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --no-restore
+      run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --configuration Release --no-restore
     - name: Pack
       run: dotnet pack CSCG.Abstract/CSCG.Abstract.csproj --configuration Release --no-build --no-restore --output .
