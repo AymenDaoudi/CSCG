@@ -2,10 +2,10 @@ name: Build CSCG.Abstract
 
 on:
   push:
-    paths: [ CSCG.Abstract/** ]
+    paths: [ CSCG.Abstract/**, .github/workflows/** ]
     branches: [ main, feature/* ]
   pull_request:
-    paths: [ CSCG.Abstract/** ]
+    paths: [ CSCG.Abstract/**, .github/workflows/** ]
     branches: [ main, feature/* ]
 
 jobs:
