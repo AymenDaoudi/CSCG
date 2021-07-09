@@ -3,6 +3,7 @@ name: CSCG.Abstract.CD
 on:
   workflow_run:
     workflows: ["CSCG.Abstract.CI"]
+    branches: [main]
     types:
       - completed
 
