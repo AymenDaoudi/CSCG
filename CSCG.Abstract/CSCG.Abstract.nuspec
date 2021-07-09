@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>CSCG.Abstract</id>
+    <version>0.0.1</version>
+    <title>CSCG Abstract</title>
+    <authors>AymenDaoudi</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">GPL-3.0-only</license>
+    <projectUrl>https://github.com/AymenDaoudi/CSCG/tree/main/CSCG.Abstract</projectUrl>
+    <!--<iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>-->
+    <description>Abstraction of CSCG</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>Copyright 2021</copyright>
+    <tags>CodeGeneration CSharp</tags>
+  </metadata>
+</package>
