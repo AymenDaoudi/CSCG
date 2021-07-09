@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CSCG.Abstract</id>
-    <version>0.0.1</version>
+    <version>$version$</version>
     <title>CSCG Abstract</title>
     <authors>AymenDaoudi</authors>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
