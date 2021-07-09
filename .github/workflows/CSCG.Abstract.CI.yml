@@ -5,8 +5,8 @@ on:
     paths: [ CSCG.Abstract/** ]
     branches: [ main, feature/* ]
   pull_request:
-    branches: [ main, feature/* ]
     paths: [ CSCG.Abstract/** ]
+    branches: [ main, feature/* ]
 
 jobs:
   build:
