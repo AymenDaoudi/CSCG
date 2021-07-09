@@ -10,7 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github.Workflows", "Github.Workflows", "{4F23C492-BEF8-4C22-874E-2BC434ED5347}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\CSCG.Abstract.CI.yml = .github\workflows\CSCG.Abstract.CI.yml
+		.github\workflows\CSCG.Abstract.CD.yml = .github\workflows\CSCG.Abstract.CD.yml
 		.github\workflows\CSCG.Roslyn.CI.yml = .github\workflows\CSCG.Roslyn.CI.yml
+		.github\workflows\CSCG.Roslyn.CD.yml = .github\workflows\CSCG.Roslyn.CD.yml
 	EndProjectSection
 EndProject
 Global
