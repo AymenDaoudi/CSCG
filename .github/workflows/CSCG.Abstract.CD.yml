@@ -14,5 +14,7 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v2
+    - name: Restore dependencies
+      run: dotnet restore CSCG.Abstract/CSCG.Abstract.csproj
     - name: Pack
       run: dotnet pack --configuration Release --no-build --output .
