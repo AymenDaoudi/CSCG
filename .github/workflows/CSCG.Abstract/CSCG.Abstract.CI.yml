@@ -1,0 +1,25 @@
+name: CSCG.Abstract.CI
+
+on:
+  push:
+    paths: [ CSCG.Abstract/**, .github/workflows/CSCG.Abstract.CI.yml ]
+    branches: [ main, feature/* ]
+  pull_request:
+    paths: [ CSCG.Abstract/**, .github/workflows/CSCG.Abstract.CI.yml ]
+    branches: [ main, feature/* ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore CSCG.Abstract/CSCG.Abstract.csproj
+    - name: Build
+      run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --no-restore
