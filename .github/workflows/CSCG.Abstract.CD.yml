@@ -19,6 +19,6 @@ jobs:
     - name: Build
       run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --configuration Release --no-restore
     - name: Pack
-      run: dotnet pack CSCG.Abstract/CSCG.Abstract.csproj --configuration Release --no-build --no-restore --output .
+      run: dotnet pack CSCG.Abstract/CSCG.Abstract.csproj -p:NuspecFile=CSCG.Abstract.nuspec --configuration Release --no-build --no-restore --output .
     - name: PushNuget
       run: dotnet nuget push *.nupkg --source Nuget.org --api-key ${{secrets.PUBLISH_TO_NUGET_ORG}} --skip-duplicate
