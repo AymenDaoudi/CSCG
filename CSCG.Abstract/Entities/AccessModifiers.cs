@@ -20,6 +20,5 @@ namespace CSCG.Abstract.Entities
         Public = 2,
         Protected = 4,
         Static = 8
-            e
     }
 }
