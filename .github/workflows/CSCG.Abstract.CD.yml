@@ -1,25 +1,17 @@
-name: CSCG.Abstract.CI
+name: CSCG.Abstract.CD
 
 on:
-  push:
-    paths: [ CSCG.Abstract/**, .github/workflows/CSCG.Abstract.CI.yml ]
-    branches: [ main, feature/* ]
-  pull_request:
-    paths: [ CSCG.Abstract/**, .github/workflows/CSCG.Abstract.CI.yml ]
-    branches: [ main, feature/* ]
+  workflow_run:
+    workflows: ["CSCG.Abstract.CI"]
+    types:
+      - completed
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore CSCG.Abstract/CSCG.Abstract.csproj
     - name: Build
-      run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --no-restore
+      run: echo hi
