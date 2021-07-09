@@ -2,10 +2,10 @@ name: Build CSCG.Roslyn
 
 on:
   push:
-    paths: [ CSCG.Roslyn/**, .github/workflows/** ]
+    paths: [ CSCG.Roslyn/**, .github/workflows/CSCG.Roslyn.CI.yml ]
     branches: [ main, feature/* ]
   pull_request:
-    paths: [ CSCG.Roslyn/**,.github/workflows/** ]
+    paths: [ CSCG.Roslyn/**,.github/workflows/CSCG.Roslyn.CI.yml ]
     branches: [ main, feature/* ]
 
 jobs:
