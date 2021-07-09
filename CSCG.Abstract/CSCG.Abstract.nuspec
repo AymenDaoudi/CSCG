@@ -14,4 +14,9 @@
     <copyright>Copyright 2021</copyright>
     <tags>CodeGeneration CSharp</tags>
   </metadata>
+  <files>
+    <file src="bin\Release\netstandard2.1\CSCG.Abstract.dll" target="bin\Release\netstandard2.1\CSCG.Abstract.dll" />
+    <file src="bin\Release\netstandard2.1\CSCG.Abstract.pdb" target="bin\Release\netstandard2.1\CSCG.Abstract.pdb" />
+    <file src="bin\Release\netstandard2.1\CSCG.Abstract.deps.json" target="bin\Release\netstandard2.1\CSCG.Abstract.deps.json" />
+  </files>
 </package>
