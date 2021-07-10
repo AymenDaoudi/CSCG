@@ -15,8 +15,8 @@
     <tags>CodeGeneration CSharp</tags>
   </metadata>
   <files>
-    <file src="bin\Release\netstandard2.1\CSCG.Abstract.dll" target="bin\Release\netstandard2.1\CSCG.Abstract.dll" />
-    <file src="bin\Release\netstandard2.1\CSCG.Abstract.pdb" target="bin\Release\netstandard2.1\CSCG.Abstract.pdb" />
-    <file src="bin\Release\netstandard2.1\CSCG.Abstract.deps.json" target="bin\Release\netstandard2.1\CSCG.Abstract.deps.json" />
+    <file src="bin\Release\netstandard2.1\CSCG.Abstract.dll" target="lib\CSCG.Abstract.dll" />
+    <file src="bin\Release\netstandard2.1\CSCG.Abstract.pdb" target="lib\CSCG.Abstract.pdb" />
+    <file src="bin\Release\netstandard2.1\CSCG.Abstract.deps.json" target="lib\CSCG.Abstract.deps.json" />
   </files>
 </package>
