@@ -14,6 +14,10 @@
     <copyright>Copyright 2021</copyright>
     <tags>CodeGeneration CSharp</tags>
   </metadata>
+  <dependencies>
+    <group targetFramework="netstandard2.1">
+    </group>
+  </dependencies>
   <files>
     <file src="bin\Release\netstandard2.1\CSCG.Abstract.dll" target="lib\netstandard2.1\CSCG.Abstract.dll" />
     <file src="bin\Release\netstandard2.1\CSCG.Abstract.pdb" target="lib\netstandard2.1\CSCG.Abstract.pdb" />
