@@ -14,11 +14,15 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
     - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '2.1.x'
     - name: Restore dependencies
       run: dotnet restore CSCG.Abstract/CSCG.Abstract.csproj
     - name: Build
       run: dotnet build CSCG.Abstract/CSCG.Abstract.csproj --configuration Release --no-restore
     - name: Pack
-      run: dotnet pack CSCG.Abstract/CSCG.Abstract.csproj -p:NuspecFile=CSCG.Abstract.nuspec -p:NuspecProperties="version=0.0.11" --configuration Release --include-symbols --no-build --no-restore --output .
+      run: dotnet pack CSCG.Abstract/CSCG.Abstract.csproj -p:NuspecFile=CSCG.Abstract.nuspec -p:NuspecProperties="version=0.0.12" --configuration Release --include-symbols --no-build --no-restore --output .
     - name: PushNuget
       run: dotnet nuget push *.nupkg --source Nuget.org --api-key ${{secrets.PUBLISH_TO_NUGET_ORG}} --skip-duplicate
