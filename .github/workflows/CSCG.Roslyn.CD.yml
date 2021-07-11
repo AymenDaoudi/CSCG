@@ -19,7 +19,7 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore CSCG.Abstract/CSCG.Roslyn.csproj
+      run: dotnet restore CSCG.Roslyn/CSCG.Roslyn.csproj
     - name: Build
       run: dotnet build CSCG.Roslyn/CSCG.Roslyn.csproj --configuration Release --no-restore
     - name: Pack
