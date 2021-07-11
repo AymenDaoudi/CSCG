@@ -7,6 +7,6 @@ namespace CSCG.Abstract.Generators.Namespaces
         where TNs : NamespaceEntityBase<TType>
         where TType : TypeEntityBase
     {
-        IInitializedNamespaceGenerator<NamespaceEntityBase<TypeEntityBase>, TypeEntityBase> Initialize(string className);
+        IInitializedNamespaceGenerator<NamespaceEntityBase<TypeEntityBase>, TypeEntityBase> Initialize(string namespaceName);
     }
 }
