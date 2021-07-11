@@ -3,16 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSCG.Abstract", "CSCG.Abstract\CSCG.Abstract.csproj", "{B5D12AE0-6CE1-4333-9AAB-895B65DC50CD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSCG.Roslyn", "CSCG.Roslyn\CSCG.Roslyn.csproj", "{742D3B98-1C4C-4C53-A186-0BDA0524EEC2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github.Workflows", "Github.Workflows", "{4F23C492-BEF8-4C22-874E-2BC434ED5347}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\CSCG.Abstract.CI.yml = .github\workflows\CSCG.Abstract.CI.yml
 		.github\workflows\CSCG.Abstract.CD.yml = .github\workflows\CSCG.Abstract.CD.yml
-		.github\workflows\CSCG.Roslyn.CI.yml = .github\workflows\CSCG.Roslyn.CI.yml
+		.github\workflows\CSCG.Abstract.CI.yml = .github\workflows\CSCG.Abstract.CI.yml
 		.github\workflows\CSCG.Roslyn.CD.yml = .github\workflows\CSCG.Roslyn.CD.yml
+		.github\workflows\CSCG.Roslyn.CI.yml = .github\workflows\CSCG.Roslyn.CI.yml
 	EndProjectSection
 EndProject
 Global
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B5D12AE0-6CE1-4333-9AAB-895B65DC50CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5D12AE0-6CE1-4333-9AAB-895B65DC50CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5D12AE0-6CE1-4333-9AAB-895B65DC50CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5D12AE0-6CE1-4333-9AAB-895B65DC50CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{742D3B98-1C4C-4C53-A186-0BDA0524EEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{742D3B98-1C4C-4C53-A186-0BDA0524EEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{742D3B98-1C4C-4C53-A186-0BDA0524EEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU

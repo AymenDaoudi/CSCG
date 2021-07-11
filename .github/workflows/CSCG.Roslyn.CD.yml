@@ -1,12 +1,11 @@
 name: CSCG.Roslyn.CI
 
 on:
-  push:
-    paths: [ CSCG.Roslyn/**, .github/workflows/CSCG.Roslyn.CI.yml ]
-    branches: [ main, feature/* ]
-  pull_request:
-    paths: [ CSCG.Roslyn/**,.github/workflows/CSCG.Roslyn.CI.yml ]
-    branches: [ main, feature/* ]
+  workflow_run:
+    workflows: ["CSCG.Roslyn.CI"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   build:
@@ -20,6 +19,10 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore CSCG.Roslyn/CSCG.Roslyn.csproj
+      run: dotnet restore CSCG.Abstract/CSCG.Roslyn.csproj
     - name: Build
-      run: dotnet build CSCG.Roslyn/CSCG.Roslyn.csproj --no-restore
+      run: dotnet build CSCG.Roslyn/CSCG.Roslyn.csproj --configuration Release --no-restore
+    - name: Pack
+      run: dotnet pack CSCG.Roslyn/CSCG.Roslyn.csproj -p:NuspecFile=CSCG.Roslyn.nuspec -p:NuspecProperties="version=0.0.1" --configuration Release --include-symbols --no-build --no-restore --output .
+    - name: PushNuget
+      run: dotnet nuget push *.nupkg --source Nuget.org --api-key ${{secrets.PUBLISH_TO_NUGET_ORG}} --skip-duplicate
