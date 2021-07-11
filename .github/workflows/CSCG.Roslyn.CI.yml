@@ -5,7 +5,7 @@ on:
     paths: [ CSCG.Roslyn/**, .github/workflows/CSCG.Roslyn.CI.yml ]
     branches: [ main, feature/* ]
   pull_request:
-    paths: [ CSCG.Roslyn/**,.github/workflows/CSCG.Roslyn.CI.yml ]
+    paths: [ CSCG.Roslyn/**, .github/workflows/CSCG.Roslyn.CI.yml ]
     branches: [ main, feature/* ]
 
 jobs:
