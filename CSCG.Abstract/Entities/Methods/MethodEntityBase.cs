@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
 
-using CSCG.Abstract.Entities.Statements;
-
 namespace CSCG.Abstract.Entities.Methods
 {
     public class MethodEntityBase
     {
         public object Method { get; protected set; }
         public string MethodName { get; }
-        public AccessModifiers Modifiers { get; }
+        public AccessModifiers Modifiers { get; protected set; }
         public string ReturnType { get; set; }
         public ICollection<ParameterEntityBase> Parameters { get; set; }
 

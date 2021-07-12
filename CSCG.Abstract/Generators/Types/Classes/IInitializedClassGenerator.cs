@@ -1,11 +1,11 @@
-﻿using CSCG.Abstract.Entities.Methods;
+﻿using CSCG.Abstract.Entities.Methods.Classes;
 using CSCG.Abstract.Entities.Types.Classes;
 
 namespace CSCG.Abstract.Generators.Types.Classes
 {
     public interface IInitializedClassGenerator<TClass, TMethod> : IGenerator<TClass>
         where TClass : ClassEntityBase
-        where TMethod : MethodEntity
+        where TMethod : ClassMethodEntity
     {
         IInitializedClassGenerator<TClass, TMethod> SetFields();
 

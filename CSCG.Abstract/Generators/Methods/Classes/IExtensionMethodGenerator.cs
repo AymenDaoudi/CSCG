@@ -1,18 +1,19 @@
-﻿using CSCG.Abstract.Entities;
-using CSCG.Abstract.Entities.Methods;
+﻿using CSCG.Abstract.Entities.Methods;
+using CSCG.Abstract.Entities.Methods.Classes;
 using CSCG.Abstract.Entities.Statements;
 
 namespace CSCG.Abstract.Generators.Methods
 {
-    public interface IInstanceMethodGenerator<TMethod, TStatement, TParameter>
-        where TMethod : MethodEntity
+    public interface IExtensionMethodGenerator<TMethod, TStatement, TParameter>
+        where TMethod : ExtensionMethodEntity
         where TStatement : StatementEntityBase
         where TParameter : ParameterEntityBase
     {
         IInitializedMethodGenerator<TMethod, TStatement, TParameter> Initialize(
             string methodName,
             string returnTypeName,
-            AccessModifiers accessModifiers
+            string extendedTypeName,
+            string extendedTypeParameterName
         );
     }
 }

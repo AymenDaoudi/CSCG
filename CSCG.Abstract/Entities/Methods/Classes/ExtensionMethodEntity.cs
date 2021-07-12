@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace CSCG.Abstract.Entities.Methods
+namespace CSCG.Abstract.Entities.Methods.Classes
 {
-    public class ExtensionMethodEntity : MethodEntityBase
+    public class ExtensionMethodEntity : NonAbstractMethodEntity
     {
         public string ExtendedTypeName { get; }
         public string ExtendedTypeParameterName { get; }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace CSCG.Abstract.Entities.Methods
+namespace CSCG.Abstract.Entities.Methods.Interfaces
 {
-    public class UnimplementedInterfaceMethodEntity : MethodEntityBase
+    public class InterfaceMethodEntity : MethodEntityBase
     {
         private static readonly Lazy<AccessModifiers> _modifiers = new Lazy<AccessModifiers>(() => AccessModifiers.None);
 
@@ -14,12 +14,12 @@ namespace CSCG.Abstract.Entities.Methods
             }
         }
 
-        public UnimplementedInterfaceMethodEntity(object method, string methodName)
+        public InterfaceMethodEntity(object method, string methodName)
         : base(method, methodName, Modifiers)
         {
         }
 
-        public UnimplementedInterfaceMethodEntity()
+        public InterfaceMethodEntity()
         {
         }
     }

@@ -19,6 +19,7 @@ namespace CSCG.Abstract.Entities
         Private = 1,
         Public = 2,
         Protected = 4,
-        Static = 8
+        Static = 8,
+        Abstract = 16
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CSCG.Abstract.Entities.Methods;
+using CSCG.Abstract.Entities.Methods.Classes;
 using CSCG.Abstract.Entities.Statements;
 
 namespace CSCG.Abstract.Generators.Methods
