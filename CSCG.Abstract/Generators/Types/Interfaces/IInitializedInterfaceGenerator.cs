@@ -7,6 +7,8 @@ namespace CSCG.Abstract.Generators.Types.Interfaces
         where TInterface : InterfaceEntityBase
         where TMethod : InterfaceMethodEntity
     {
+        IInitializedInterfaceGenerator<TInterface, TMethod> ImplementInterfaces(params InterfaceEntityBase[] interfaces);
+
         IInitializedInterfaceGenerator<TInterface, TMethod> SetMethods(params TMethod[] methods);
     }
 }
