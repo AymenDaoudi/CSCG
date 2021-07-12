@@ -4,12 +4,13 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-using CSCG.Abstract.Generators.Methods;
 using CSCG.Abstract.Entities.Methods;
+using CSCG.Abstract.Entities.Methods.Classes;
 using CSCG.Abstract.Entities.Statements;
+using CSCG.Abstract.Generators.Methods;
 using CSCG.Abstract.Generators.Modifiers;
 
-namespace CSCG.Roslyn.Generators.Methods
+namespace CSCG.Roslyn.Generators.Methods.Classes
 {
     public class ExtensionMethodGenerator : IExtensionMethodGenerator<ExtensionMethodEntity, StatementEntityBase, ParameterEntityBase>
     {

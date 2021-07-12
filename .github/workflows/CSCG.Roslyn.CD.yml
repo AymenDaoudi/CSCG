@@ -23,6 +23,6 @@ jobs:
     - name: Build
       run: dotnet build CSCG.Roslyn/CSCG.Roslyn.csproj --configuration Release --no-restore
     - name: Pack
-      run: dotnet pack CSCG.Roslyn/CSCG.Roslyn.csproj -p:NuspecFile=CSCG.Roslyn.nuspec -p:NuspecProperties="version=0.0.6" --configuration Release --include-symbols --no-build --no-restore --output .
+      run: dotnet pack CSCG.Roslyn/CSCG.Roslyn.csproj -p:NuspecFile=CSCG.Roslyn.nuspec -p:NuspecProperties="version=0.1.0" --configuration Release --include-symbols --no-build --no-restore --output .
     - name: PushNuget
       run: dotnet nuget push *.nupkg --source Nuget.org --api-key ${{secrets.PUBLISH_TO_NUGET_ORG}} --skip-duplicate

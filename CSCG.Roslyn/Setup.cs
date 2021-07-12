@@ -19,11 +19,11 @@ using CSCG.Abstract.Repositories;
 using CSCG.Roslyn.Generators.Expressions;
 using CSCG.Roslyn.Generators.Files;
 using CSCG.Roslyn.Generators.Mappers;
-using CSCG.Roslyn.Generators.Methods;
 using CSCG.Roslyn.Generators.Namespaces;
 using CSCG.Roslyn.Generators.Statements;
 using CSCG.Roslyn.Generators.Types.Classes;
 using CSCG.Roslyn.Repositories;
+using CSCG.Roslyn.Generators.Methods.Classes;
 
 namespace CSCG.Roslyn
 {
@@ -42,7 +42,7 @@ namespace CSCG.Roslyn
                 .AddSingleton<IMethodRepository, MethodRepository>()
                 .AddSingleton<IExpressionRepository, ExpressionRepository>()
                 .AddSingleton(typeof(IExtensionMethodGenerator<ExtensionMethodEntity, StatementEntityBase, ParameterEntityBase>), typeof(ExtensionMethodGenerator))
-                .AddSingleton(typeof(IInstanceMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase>), typeof(MethodGenerator))
+                .AddSingleton(typeof(IInstanceMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase>), typeof(InstanceMethodGenerator))
                 .AddSingleton(typeof(IStatementGenerator<StatementEntityBase, ExpressionEntityBase>), typeof(StatementGenerator))
                 .AddSingleton<IMethodInvocationExpressionGenerator, MethodInvocationExpressionGenerator>()
                 .AddSingleton<IObjectExpressionGenerator, ObjectExpressionGenerator>()

@@ -5,24 +5,25 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-using CSCG.Abstract.Generators.Methods;
-using CSCG.Abstract.Entities.Methods;
-using CSCG.Abstract.Entities.Statements;
-using CSCG.Abstract.Generators.Modifiers;
 using CSCG.Abstract.Entities;
+using CSCG.Abstract.Entities.Methods;
+using CSCG.Abstract.Entities.Methods.Classes;
+using CSCG.Abstract.Entities.Statements;
+using CSCG.Abstract.Generators.Methods;
+using CSCG.Abstract.Generators.Modifiers;
 
-namespace CSCG.Roslyn.Generators.Methods
+namespace CSCG.Roslyn.Generators.Methods.Classes
 {
-    public class MethodGenerator : IInstanceMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase>
+    public class InstanceMethodGenerator : IInstanceMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase>
     {
         private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
 
-        public MethodGenerator(IAccessModifierMapper<SyntaxToken> accessModifierMapper)
+        public InstanceMethodGenerator(IAccessModifierMapper<SyntaxToken> accessModifierMapper)
         {
             _accessModifierMapper = accessModifierMapper;
         }
 
-        public IInitializedMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase> Initialize(
+        public IInitializedMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase> Initialize(
             string methodName,
             string returnTypeName,
             AccessModifiers modifiers
@@ -31,16 +32,16 @@ namespace CSCG.Roslyn.Generators.Methods
             var method = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName(returnTypeName), methodName);
             method = method.AddModifiers(_accessModifierMapper.From(modifiers));
 
-            var initializedMethodGenerator = new InitializedMethodGenerator(_accessModifierMapper, method);
+            var initializedMethodGenerator = new InitializedInstanceMethodGenerator(_accessModifierMapper, method);
 
             return initializedMethodGenerator;
         }
 
-        private class InitializedMethodGenerator : MethodGeneratorBase<MethodEntityBase, MethodDeclarationSyntax>, IInitializedInstanceMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase>
+        private class InitializedInstanceMethodGenerator : MethodGeneratorBase<NonAbstractMethodEntity, MethodDeclarationSyntax>, IInitializedInstanceMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase>
         {
             private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
 
-            public InitializedMethodGenerator(
+            public InitializedInstanceMethodGenerator(
                 IAccessModifierMapper<SyntaxToken> accessModifierMapper,
                 MethodDeclarationSyntax method
             )
@@ -49,7 +50,7 @@ namespace CSCG.Roslyn.Generators.Methods
                 _accessModifierMapper = accessModifierMapper;
             }
 
-            public IInitializedMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase> SetParameters(params ParameterEntityBase[] parameters)
+            public IInitializedMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase> SetParameters(params ParameterEntityBase[] parameters)
             {
                 var parameterSynatxes = parameters.Select(parameter => SyntaxFactory.Parameter(
                     new SyntaxList<AttributeListSyntax>(),
@@ -64,7 +65,7 @@ namespace CSCG.Roslyn.Generators.Methods
                 return this;
             }
 
-            public IInitializedMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase> SetStatements(params StatementEntityBase[] statements)
+            public IInitializedMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase> SetStatements(params StatementEntityBase[] statements)
             {
                 //Todo: To Convert to a strategy pattern
                 var statementSyntaxes = new List<StatementSyntax>();
@@ -82,9 +83,9 @@ namespace CSCG.Roslyn.Generators.Methods
                 return this;
             }
 
-            protected override MethodEntityBase GenerateMethodEntity()
+            protected override NonAbstractMethodEntity GenerateMethodEntity()
             {
-                var methodEntity = new MethodEntityBase(
+                var methodEntity = new NonAbstractMethodEntity(
                     _method,
                     _method.Identifier.ValueText,
                     _accessModifierMapper.To(_method.Modifiers.ToArray())
