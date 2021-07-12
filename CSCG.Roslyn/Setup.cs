@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using CSCG.Abstract.Entities.Expressions;
 using CSCG.Abstract.Entities.Files;
 using CSCG.Abstract.Entities.Methods;
+using CSCG.Abstract.Entities.Methods.Classes;
 using CSCG.Abstract.Entities.Namespaces;
 using CSCG.Abstract.Entities.Statements;
 using CSCG.Abstract.Entities.Types;
@@ -38,11 +39,11 @@ namespace CSCG.Roslyn
                 .AddSingleton(typeof(ICodeFileGenerator<TypeEntityBase>), typeof(CodeFileGenerator))
                 .AddSingleton<ICodeFileModifier, CodeFileModifier>()
                 .AddSingleton(typeof(INamespaceGenerator<NamespaceEntityBase<TypeEntityBase>, TypeEntityBase>), typeof(NamespaceGenerator))
-                .AddSingleton(typeof(IClassGenerator<ClassEntityBase, MethodEntityBase>), typeof(ClassGenerator))
+                .AddSingleton(typeof(IClassGenerator<ClassEntityBase, ClassMethodEntity>), typeof(ClassGenerator))
                 .AddSingleton<IMethodRepository, MethodRepository>()
                 .AddSingleton<IExpressionRepository, ExpressionRepository>()
                 .AddSingleton(typeof(IExtensionMethodGenerator<ExtensionMethodEntity, StatementEntityBase, ParameterEntityBase>), typeof(ExtensionMethodGenerator))
-                .AddSingleton(typeof(IInstanceMethodGenerator<MethodEntityBase, StatementEntityBase, ParameterEntityBase>), typeof(InstanceMethodGenerator))
+                .AddSingleton(typeof(IInstanceMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase>), typeof(InstanceMethodGenerator))
                 .AddSingleton(typeof(IStatementGenerator<StatementEntityBase, ExpressionEntityBase>), typeof(StatementGenerator))
                 .AddSingleton<IMethodInvocationExpressionGenerator, MethodInvocationExpressionGenerator>()
                 .AddSingleton<IObjectExpressionGenerator, ObjectExpressionGenerator>()
