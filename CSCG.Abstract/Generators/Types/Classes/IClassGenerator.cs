@@ -6,7 +6,7 @@ namespace CSCG.Abstract.Generators.Types.Classes
 {
     public interface IClassGenerator<TClass, TMethod>
         where TClass : ClassEntityBase
-        where TMethod : MethodEntityBase
+        where TMethod : MethodEntity
     {
         IInitializedClassGenerator<TClass, TMethod> Initialize(string className, AccessModifiers accessModifiers);
     }

@@ -5,7 +5,7 @@ using CSCG.Abstract.Entities.Statements;
 namespace CSCG.Abstract.Generators.Methods
 {
     public interface IInstanceMethodGenerator<TMethod, TStatement, TParameter>
-        where TMethod : MethodEntityBase
+        where TMethod : MethodEntity
         where TStatement : StatementEntityBase
         where TParameter : ParameterEntityBase
     {

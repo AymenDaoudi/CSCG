@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using CSCG.Abstract.Entities.Statements;
 
 namespace CSCG.Abstract.Entities.Methods
@@ -10,7 +11,6 @@ namespace CSCG.Abstract.Entities.Methods
         public AccessModifiers Modifiers { get; }
         public string ReturnType { get; set; }
         public ICollection<ParameterEntityBase> Parameters { get; set; }
-        public ICollection<StatementEntityBase> CodeStatements { get; set; }
 
         public MethodEntityBase(
             object method,
@@ -23,7 +23,6 @@ namespace CSCG.Abstract.Entities.Methods
             Modifiers = modifiers;
             ReturnType = null;
             Parameters = new List<ParameterEntityBase>();
-            CodeStatements = new List<StatementEntityBase>();
         }
 
         public MethodEntityBase()

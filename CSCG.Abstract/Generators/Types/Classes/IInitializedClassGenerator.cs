@@ -5,7 +5,7 @@ namespace CSCG.Abstract.Generators.Types.Classes
 {
     public interface IInitializedClassGenerator<TClass, TMethod> : IGenerator<TClass>
         where TClass : ClassEntityBase
-        where TMethod : MethodEntityBase
+        where TMethod : MethodEntity
     {
         IInitializedClassGenerator<TClass, TMethod> SetFields();
 
