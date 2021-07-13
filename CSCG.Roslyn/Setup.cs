@@ -5,16 +5,19 @@ using CSCG.Abstract.Entities.Expressions;
 using CSCG.Abstract.Entities.Files;
 using CSCG.Abstract.Entities.Methods;
 using CSCG.Abstract.Entities.Methods.Classes;
+using CSCG.Abstract.Entities.Methods.Interfaces;
 using CSCG.Abstract.Entities.Namespaces;
 using CSCG.Abstract.Entities.Statements;
 using CSCG.Abstract.Entities.Types;
 using CSCG.Abstract.Entities.Types.Classes;
+using CSCG.Abstract.Entities.Types.Interfaces;
 using CSCG.Abstract.Generators.Expressions;
 using CSCG.Abstract.Generators.Files;
 using CSCG.Abstract.Generators.Methods;
 using CSCG.Abstract.Generators.Modifiers;
 using CSCG.Abstract.Generators.Namespaces;
 using CSCG.Abstract.Generators.Types.Classes;
+using CSCG.Abstract.Generators.Types.Interfaces;
 using CSCG.Abstract.Generators.Statements;
 using CSCG.Abstract.Repositories;
 using CSCG.Roslyn.Generators.Expressions;
@@ -25,6 +28,7 @@ using CSCG.Roslyn.Generators.Statements;
 using CSCG.Roslyn.Generators.Types.Classes;
 using CSCG.Roslyn.Repositories;
 using CSCG.Roslyn.Generators.Methods.Classes;
+using CSCG.Roslyn.Generators.Types.Interfaces;
 
 namespace CSCG.Roslyn
 {
@@ -40,6 +44,7 @@ namespace CSCG.Roslyn
                 .AddSingleton<ICodeFileModifier, CodeFileModifier>()
                 .AddSingleton(typeof(INamespaceGenerator<NamespaceEntityBase<TypeEntityBase>, TypeEntityBase>), typeof(NamespaceGenerator))
                 .AddSingleton(typeof(IClassGenerator<ClassEntityBase, ClassMethodEntity>), typeof(ClassGenerator))
+                .AddSingleton(typeof(IInterfaceGenerator<InterfaceEntityBase, InterfaceMethodEntity>), typeof(InterfaceGenerator))
                 .AddSingleton<IMethodRepository, MethodRepository>()
                 .AddSingleton<IExpressionRepository, ExpressionRepository>()
                 .AddSingleton(typeof(IExtensionMethodGenerator<ExtensionMethodEntity, StatementEntityBase, ParameterEntityBase>), typeof(ExtensionMethodGenerator))
