@@ -16,8 +16,7 @@
     <dependencies>
       <group targetFramework="netstandard2.1">
         <dependency id="CSCG.Abstract" version="0.2.3"/>
-        <!--<dependency id="Microsoft.CodeAnalysis.CSharp" version="3.10.0"/>
-        <dependency id="Microsoft.Extensions.DependencyInjection" version="5.0.1"/>-->
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="5.0.1"/>
       </group>
     </dependencies>
   </metadata>
