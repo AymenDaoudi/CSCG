@@ -8,9 +8,9 @@ using CSCG.Abstract.Generators.Modifiers;
 
 namespace CSCG.Roslyn.Generators.Mappers
 {
-    internal class AccessModifiersMapper : IAccessModifierMapper<SyntaxToken>
+    internal class AccessModifiersMapper : IAccessModifierMapper
     {
-        public SyntaxToken[] From(AccessModifiers accessModifier)
+        public object From(AccessModifiers accessModifier)
         {
             var synatxTokens = accessModifier switch
             {
@@ -40,8 +40,10 @@ namespace CSCG.Roslyn.Generators.Mappers
             return synatxTokens;
         }
 
-        public AccessModifiers To(SyntaxToken[] syntaxTokens)
+        public AccessModifiers To(object accessModifier)
         {
+            var syntaxTokens = (SyntaxToken[])accessModifier;
+
             var syntaxKinds = syntaxTokens
                 .Select(t => t.Kind())
                 .ToArray();

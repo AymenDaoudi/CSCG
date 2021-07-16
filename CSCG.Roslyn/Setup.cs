@@ -1,5 +1,4 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 using CSCG.Abstract.Entities.Expressions;
 using CSCG.Abstract.Entities.Files;
@@ -52,7 +51,7 @@ namespace CSCG.Roslyn
                 .AddSingleton(typeof(IStatementGenerator<StatementEntityBase, ExpressionEntityBase>), typeof(StatementGenerator))
                 .AddSingleton<IMethodInvocationExpressionGenerator, MethodInvocationExpressionGenerator>()
                 .AddSingleton<IObjectExpressionGenerator, ObjectExpressionGenerator>()
-                .AddSingleton(typeof(IAccessModifierMapper<SyntaxToken>), typeof(AccessModifiersMapper));
+                .AddSingleton<IAccessModifierMapper, AccessModifiersMapper>();
         }
     }
 }

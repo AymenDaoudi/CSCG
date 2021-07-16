@@ -16,9 +16,9 @@ namespace CSCG.Roslyn.Generators.Methods.Classes
 {
     public class InstanceMethodGenerator : IInstanceMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase>
     {
-        private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
+        private readonly IAccessModifierMapper _accessModifierMapper;
 
-        public InstanceMethodGenerator(IAccessModifierMapper<SyntaxToken> accessModifierMapper)
+        public InstanceMethodGenerator(IAccessModifierMapper accessModifierMapper)
         {
             _accessModifierMapper = accessModifierMapper;
         }
@@ -30,7 +30,9 @@ namespace CSCG.Roslyn.Generators.Methods.Classes
         )
         {
             var method = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName(returnTypeName), methodName);
-            method = method.AddModifiers(_accessModifierMapper.From(modifiers));
+
+            var syntaxTokenModifiers = (SyntaxToken[])_accessModifierMapper.From(modifiers);
+            method = method.AddModifiers(syntaxTokenModifiers);
 
             var initializedMethodGenerator = new InitializedInstanceMethodGenerator(_accessModifierMapper, method);
 
@@ -39,10 +41,10 @@ namespace CSCG.Roslyn.Generators.Methods.Classes
 
         private class InitializedInstanceMethodGenerator : MethodGeneratorBase<NonAbstractMethodEntity, MethodDeclarationSyntax>, IInitializedInstanceMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase>
         {
-            private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
+            private readonly IAccessModifierMapper _accessModifierMapper;
 
             public InitializedInstanceMethodGenerator(
-                IAccessModifierMapper<SyntaxToken> accessModifierMapper,
+                IAccessModifierMapper accessModifierMapper,
                 MethodDeclarationSyntax method
             )
             {

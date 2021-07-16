@@ -14,9 +14,9 @@ namespace CSCG.Roslyn.Generators.Methods.Classes
 {
     public class ExtensionMethodGenerator : IExtensionMethodGenerator<ExtensionMethodEntity, StatementEntityBase, ParameterEntityBase>
     {
-        private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
+        private readonly IAccessModifierMapper _accessModifierMapper;
 
-        public ExtensionMethodGenerator(IAccessModifierMapper<SyntaxToken> accessModifierMapper)
+        public ExtensionMethodGenerator(IAccessModifierMapper accessModifierMapper)
         {
             _accessModifierMapper = accessModifierMapper;
         }
@@ -29,7 +29,9 @@ namespace CSCG.Roslyn.Generators.Methods.Classes
         )
         {
             var method = SyntaxFactory.MethodDeclaration(SyntaxFactory.ParseTypeName(returnTypeName), methodName);
-            method = method.AddModifiers(_accessModifierMapper.From(ExtensionMethodEntity.Modifiers));
+
+            var modifiers = (SyntaxToken[])_accessModifierMapper.From(ExtensionMethodEntity.Modifiers);
+            method = method.AddModifiers(modifiers);
 
             var ExtendedParam = SyntaxFactory.Parameter(
                 new SyntaxList<AttributeListSyntax>(),

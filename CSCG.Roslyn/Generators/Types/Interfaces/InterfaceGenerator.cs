@@ -14,16 +14,16 @@ namespace CSCG.Roslyn.Generators.Types.Interfaces
 {
     public class InterfaceGenerator : IInterfaceGenerator<InterfaceEntityBase, InterfaceMethodEntity>
     {
-        private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
+        private readonly IAccessModifierMapper _accessModifierMapper;
 
-        public InterfaceGenerator(IAccessModifierMapper<SyntaxToken> accessModifierMapper)
+        public InterfaceGenerator(IAccessModifierMapper accessModifierMapper)
         {
             _accessModifierMapper = accessModifierMapper;
         }
 
         public IInitializedInterfaceGenerator<InterfaceEntityBase, InterfaceMethodEntity> Initialize(string interfaceName, AccessModifiers modifiers)
         {
-            var syntaxTokens = _accessModifierMapper.From(modifiers);
+            var syntaxTokens = (SyntaxToken[])_accessModifierMapper.From(modifiers);
 
             var @class = SyntaxFactory
                 .InterfaceDeclaration(interfaceName)

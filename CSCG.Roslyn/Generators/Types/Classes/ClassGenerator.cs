@@ -7,24 +7,24 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using CSCG.Abstract.Entities;
 using CSCG.Abstract.Entities.Methods.Classes;
 using CSCG.Abstract.Entities.Types.Classes;
+using CSCG.Abstract.Entities.Types.Interfaces;
 using CSCG.Abstract.Generators.Modifiers;
 using CSCG.Abstract.Generators.Types.Classes;
-using CSCG.Abstract.Entities.Types.Interfaces;
 
 namespace CSCG.Roslyn.Generators.Types.Classes
 {
     public class ClassGenerator : IClassGenerator<ClassEntityBase, ClassMethodEntity>
     {
-        private readonly IAccessModifierMapper<SyntaxToken> _accessModifierMapper;
+        private readonly IAccessModifierMapper _accessModifierMapper;
 
-        public ClassGenerator(IAccessModifierMapper<SyntaxToken> accessModifierMapper)
+        public ClassGenerator(IAccessModifierMapper accessModifierMapper)
         {
             _accessModifierMapper = accessModifierMapper;
         }
 
         public IInitializedClassGenerator<ClassEntityBase, ClassMethodEntity> Initialize(string className, AccessModifiers modifiers)
         {
-            var syntaxTokens = _accessModifierMapper.From(modifiers);
+            var syntaxTokens = (SyntaxToken[])_accessModifierMapper.From(modifiers);
 
             var @class = SyntaxFactory
                 .ClassDeclaration(className)
