@@ -2,10 +2,10 @@
 
 namespace CSCG.Abstract.Generators.Modifiers
 {
-    public interface IAccessModifierMapper<T>
+    public interface IAccessModifierMapper
     {
-        T[] From(AccessModifiers accessModifier);
+        object From(AccessModifiers accessModifier);
 
-        AccessModifiers To(T[] syntaxTokens);
+        AccessModifiers To(object accessModifier);
     }
 }
