@@ -49,6 +49,7 @@ namespace CSCG.Roslyn
                 .AddSingleton(typeof(IExtensionMethodGenerator<ExtensionMethodEntity, StatementEntityBase, ParameterEntityBase>), typeof(ExtensionMethodGenerator))
                 .AddSingleton(typeof(IInstanceMethodGenerator<NonAbstractMethodEntity, StatementEntityBase, ParameterEntityBase>), typeof(InstanceMethodGenerator))
                 .AddSingleton(typeof(IStatementGenerator<StatementEntityBase, ExpressionEntityBase>), typeof(StatementGenerator))
+                .AddSingleton(typeof(IStatementGenerator<ReturnStatementEntity, ExpressionEntityBase>), typeof(ReturnStatementGenerator))
                 .AddSingleton<IMethodInvocationExpressionGenerator, MethodInvocationExpressionGenerator>()
                 .AddSingleton<IObjectExpressionGenerator, ObjectExpressionGenerator>()
                 .AddSingleton<IAccessModifierMapper, AccessModifiersMapper>();
