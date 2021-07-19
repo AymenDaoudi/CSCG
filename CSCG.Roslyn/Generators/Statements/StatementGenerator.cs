@@ -8,9 +8,9 @@ namespace CSCG.Roslyn.Generators.Statements
     {
         public StatementEntityBase Generate(ExpressionEntityBase expression)
         {
-            StatementEntityBase returnStatement = new StatementEntityBase(expression);
+            var statement = new StatementEntityBase(expression);
 
-            return returnStatement;
+            return statement;
         }
     }
 }
