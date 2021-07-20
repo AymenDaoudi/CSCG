@@ -104,8 +104,9 @@ namespace CSCG.Roslyn.Generators.Files
                 .Single(m => m.Identifier.ValueText == methodName);
 
             var lastStatementOfMethod = methodDeclarationSyntax
-                .ChildNodes()
+                .DescendantNodes()
                 .OfType<SyntaxNode>()
+                .Where(sn => sn.Parent == methodDeclarationSyntax)
                 .LastOrDefault();
 
             var newStatement = SyntaxFactory
