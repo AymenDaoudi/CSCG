@@ -103,9 +103,10 @@ namespace CSCG.Roslyn.Generators.Files
                 .OfType<MethodDeclarationSyntax>()
                 .Single(m => m.Identifier.ValueText == methodName);
 
-            var lastStatementsOfMethod = methodDeclarationSyntax
-                .DescendantNodes()
-                .OfType<StatementSyntax>()
+            var lastStatementOfMethod = methodDeclarationSyntax
+                .ChildNodes()
+                .OfType<SyntaxNode>()
+                .Where(sn => sn.Parent == methodDeclarationSyntax)
                 .LastOrDefault();
 
             var newStatement = SyntaxFactory
@@ -113,7 +114,7 @@ namespace CSCG.Roslyn.Generators.Files
                 .WithLeadingTrivia(new SyntaxTrivia[] { NEW_LINE }.Concat(THREE_TABS))
                 .WithTrailingTrivia(NEW_LINE);
 
-            codeFileRoot = codeFileRoot.InsertNodesAfter(lastStatementsOfMethod, new SyntaxNode[] { newStatement });
+            codeFileRoot = codeFileRoot.InsertNodesAfter(lastStatementOfMethod, new SyntaxNode[] { newStatement });
 
             await SaveAsync(codeFileRoot, filePath);
         }
