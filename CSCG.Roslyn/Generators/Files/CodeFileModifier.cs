@@ -105,8 +105,8 @@ namespace CSCG.Roslyn.Generators.Files
 
             var lastStatementOfMethod = methodDeclarationSyntax
                 .DescendantNodes()
-                .OfType<SyntaxNode>()
-                .Where(sn => sn.Parent == methodDeclarationSyntax)
+                .OfType<StatementSyntax>()
+                .Where(ex => ex.Parent.Parent == methodDeclarationSyntax) //First Parent is the BlockSyntax object contained withing the method
                 .LastOrDefault();
 
             var newStatement = SyntaxFactory
