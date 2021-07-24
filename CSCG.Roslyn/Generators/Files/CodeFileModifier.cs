@@ -119,6 +119,21 @@ namespace CSCG.Roslyn.Generators.Files
             await SaveAsync(codeFileRoot, filePath);
         }
 
+        public async Task AddUsingsAsync(
+            string filePath,
+            params string[] usings
+        )
+        {
+            var codeFile = await _codeFileReader.ReadAsync(filePath);
+            var codeFileRoot = codeFile.CodeFileRoot as CompilationUnitSyntax;
+
+            var allUsings = codeFileRoot.Usings.AddRange(usings.Select(@using => SyntaxFactory.UsingDirective(SyntaxFactory.ParseName(@using)).NormalizeWhitespace().WithTrailingTrivia(NEW_LINE)));
+
+            codeFileRoot = codeFileRoot.WithUsings(allUsings);
+
+            await SaveAsync(codeFileRoot, filePath);
+        }
+
         private Task SaveAsync(CompilationUnitSyntax code, string filePath)
         {
             return Task.Run(() =>
