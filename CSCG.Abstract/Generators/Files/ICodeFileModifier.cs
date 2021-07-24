@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+
 using CSCG.Abstract.Entities.Statements;
 
 namespace CSCG.Abstract.Generators.Files
@@ -17,6 +18,11 @@ namespace CSCG.Abstract.Generators.Files
             string className,
             string methodName,
             StatementEntityBase statement
+        );
+
+        Task AddUsingsAsync(
+            string filePath,
+            params string[] usings
         );
     }
 }
